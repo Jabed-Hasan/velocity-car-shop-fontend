@@ -75,7 +75,7 @@ export const createOrder = createAsyncThunk(
       console.log("Using token:", token);
 
       const response = await fetch(
-        "https://velocity-car-shop-backend.vercel.app/api/orders",
+        "https://velo-backend-five.vercel.app/api/orders",
         {
           method: "POST",
           headers: {

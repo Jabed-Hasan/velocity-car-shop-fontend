@@ -61,7 +61,7 @@ export const productLoader = async ({ params }: LoaderFunctionArgs) => {
 
   try {
     const response = await fetch(
-      `https://velocity-car-shop-backend.vercel.app/api/cars/${id}`,
+      `https://velo-backend-five.vercel.app/api/cars/${id}`,
       {
         headers: {
           Authorization: `${token}`,
@@ -114,7 +114,7 @@ const routes = createBrowserRouter([
         element: <Product />,
         loader: ({ params }) =>
           fetch(
-            `https://velocity-car-shop-backend.vercel.app/api/cars/${params.id}`,
+            `https://velo-backend-five.vercel.app/api/cars/${params.id}`,
           ),
       },
       {
@@ -238,7 +238,7 @@ const routes = createBrowserRouter([
     path: "/all-products/:id",
     element: <AllProducts />,
     loader: () =>
-      fetch(`https://velocity-car-shop-backend.vercel.app/api/cars/`),
+      fetch(`https://velo-backend-five.vercel.app/api/cars/`),
   },
   // User protected routes
   {
