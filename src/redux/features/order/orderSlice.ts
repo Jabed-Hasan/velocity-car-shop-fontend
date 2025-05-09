@@ -75,7 +75,7 @@ export const createOrder = createAsyncThunk(
       console.log("Using token:", token);
 
       const response = await fetch(
-        "http://localhost:5000/api/orders",
+        "https://velo-backend-five.vercel.app/api/orders",
         {
           method: "POST",
           headers: {

@@ -31,6 +31,7 @@ export default function SignIn() {
     register,
     handleSubmit,
     formState: { errors },
+    setValue,
   } = useForm<SignInFormData>();
 
   const onSubmit = async (data: SignInFormData) => {
@@ -101,6 +102,22 @@ export default function SignIn() {
       // Set loading state to false regardless of outcome
       setIsLoading(false);
     }
+  };
+
+  // Test login credentials handler
+  const handleTestLogin = (role: "admin" | "user") => {
+    if (role === "admin") {
+      setValue("email", "jabed8441@gmail.com");
+      setValue("password", "admin123");
+    } else {
+      setValue("email", "h@gmail.com");
+      setValue("password", "user123");
+    }
+    // Allow the form to be submitted after setting values
+    setTimeout(() => {
+      const submitButton = document.querySelector('button[type="submit"]') as HTMLButtonElement;
+      if (submitButton) submitButton.click();
+    }, 100);
   };
 
   return (
@@ -177,6 +194,27 @@ export default function SignIn() {
                 {isLoading ? "Signing In..." : "Sign In"}
               </Button>
             </form>
+          </div>
+
+          {/* Test login buttons */}
+          <div className="flex flex-col gap-2 mt-2">
+            <p className="text-center text-sm font-medium">Test Login As:</p>
+            <div className="flex gap-2 justify-center">
+              <Button 
+                onClick={() => handleTestLogin("admin")}
+                className="bg-velo-black hover:bg-black text-sm h-9 px-3"
+                type="button"
+              >
+                Admin
+              </Button>
+              <Button 
+                onClick={() => handleTestLogin("user")}
+                className="bg-velo-maroon hover:bg-red-900 text-sm h-9 px-3"
+                type="button"
+              >
+                User
+              </Button>
+            </div>
           </div>
 
           <p className="text-muted-foreground text-center text-sm md:text-base">
