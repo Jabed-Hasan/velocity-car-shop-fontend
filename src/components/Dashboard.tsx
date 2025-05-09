@@ -100,15 +100,15 @@ export function AppSidebar() {
   }, [user?.role]);
 
   return (
-    <Sidebar className="h-screen border-r bg-white">
-      <SidebarHeader className="border-b">
+    <Sidebar className="h-screen border-r border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-800">
+      <SidebarHeader className="border-b border-gray-200 dark:border-gray-700">
         <div className="flex h-16 items-center px-4">
           <div className="flex w-full items-center">
             {!isCollapsed && (
               <>
                 <img src={VeloV} alt="Velocity Logo" className="size-4" />
-                <span className="-ml-[0.7px] font-bold">elocity</span>
-                <span className="ml-auto rounded-full border px-2 py-0.5 text-xs">
+                <span className="-ml-[0.7px] font-bold dark:text-white">elocity</span>
+                <span className="ml-auto rounded-full border border-gray-200 dark:border-gray-700 px-2 py-0.5 text-xs dark:text-gray-300">
                   v1.0.0
                 </span>
               </>
@@ -125,7 +125,7 @@ export function AppSidebar() {
         <SidebarMenu className="h-full py-2">
           <SidebarMenuItem>
             <SidebarMenuButton asChild>
-              <Link to="/">
+              <Link to="/" className="dark:text-gray-300 dark:hover:text-white">
                 <Home className="h-4 w-4" />
                 <span>Home</span>
               </Link>
@@ -134,7 +134,7 @@ export function AppSidebar() {
           {navMenu.map((item) => (
             <SidebarMenuItem key={item.title}>
               <SidebarMenuButton asChild>
-                <Link to={item.url}>
+                <Link to={item.url} className="dark:text-gray-300 dark:hover:text-white">
                   {item.icon}
                   <span>{item.title}</span>
                 </Link>
@@ -162,8 +162,8 @@ export function Dashboard() {
 
   if (!isReady) {
     return (
-      <div className="flex h-screen items-center justify-center">
-        <div className="h-8 w-8 animate-spin rounded-full border-4 border-blue-600 border-t-transparent"></div>
+      <div className="flex h-screen items-center justify-center dark:bg-gray-900">
+        <div className="h-8 w-8 animate-spin rounded-full border-4 border-blue-600 border-t-transparent dark:border-blue-500"></div>
       </div>
     );
   }

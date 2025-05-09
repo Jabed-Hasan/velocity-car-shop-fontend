@@ -15,21 +15,21 @@ export default function UserDashboard() {
   const user = useAppSelector(currentUser);
 
   return (
-    <div className="h-full w-full bg-slate-50">
-      <header className="flex h-16 shrink-0 items-center gap-2 border-b bg-white px-4 shadow-sm">
+    <div className="h-full w-full bg-slate-50 dark:bg-gray-900">
+      <header className="flex h-16 shrink-0 items-center gap-2 border-b border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-800 px-4 shadow-sm">
         <div className="flex items-center gap-2">
           <SidebarTrigger />
           <Separator orientation="vertical" className="mr-2 h-4" />
           <Breadcrumb>
             <BreadcrumbList>
               <BreadcrumbItem className="hidden md:block">
-                <NavLink to="/dashboard" className="font-medium text-blue-600">
+                <NavLink to="/dashboard" className="font-medium text-blue-600 dark:text-blue-400">
                   Dashboard
                 </NavLink>
               </BreadcrumbItem>
               <BreadcrumbSeparator className="hidden md:block" />
               <BreadcrumbItem>
-                <BreadcrumbPage className="font-medium">
+                <BreadcrumbPage className="font-medium dark:text-gray-300">
                   User Overview
                 </BreadcrumbPage>
               </BreadcrumbItem>
@@ -38,29 +38,29 @@ export default function UserDashboard() {
         </div>
       </header>
       <div className="flex min-h-screen flex-1 flex-col gap-6 p-6">
-        <h1 className="text-2xl font-bold text-gray-800">My Dashboard</h1>
+        <h1 className="text-2xl font-bold text-gray-800 dark:text-white">My Dashboard</h1>
 
-        <div className="rounded-xl border border-gray-100 bg-white p-6 shadow-sm">
-          <h2 className="mb-6 text-xl font-semibold text-gray-800">
+        <div className="rounded-xl border border-gray-100 dark:border-gray-700 bg-white dark:bg-gray-800 p-6 shadow-sm">
+          <h2 className="mb-6 text-xl font-semibold text-gray-800 dark:text-white">
             Welcome, {user?.name || "User"}!
           </h2>
-          <p className="mb-6 text-gray-600">
+          <p className="mb-6 text-gray-600 dark:text-gray-300">
             Manage your orders and account details from this personal dashboard.
           </p>
 
           <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
-            <div className="relative overflow-hidden rounded-xl border border-blue-100 bg-blue-50 p-5">
+            <div className="relative overflow-hidden rounded-xl border border-blue-100 dark:border-blue-900 bg-blue-50 dark:bg-blue-900/30 p-5">
               <div className="relative z-10">
-                <h3 className="mb-2 text-lg font-semibold text-blue-800">
+                <h3 className="mb-2 text-lg font-semibold text-blue-800 dark:text-blue-300">
                   My Orders
                 </h3>
-                <p className="mb-4 max-w-xs text-blue-700">
+                <p className="mb-4 max-w-xs text-blue-700 dark:text-blue-300">
                   View and track all your previous orders in one central
                   location.
                 </p>
                 <NavLink
                   to="/dashboard/my-orders"
-                  className="inline-flex items-center rounded-lg bg-blue-600 px-4 py-2 font-medium text-white transition-colors hover:bg-blue-700"
+                  className="inline-flex items-center rounded-lg bg-blue-600 px-4 py-2 font-medium text-white transition-colors hover:bg-blue-700 dark:bg-blue-700 dark:hover:bg-blue-600"
                 >
                   View Orders
                   <svg
@@ -79,10 +79,10 @@ export default function UserDashboard() {
                   </svg>
                 </NavLink>
               </div>
-              <div className="absolute right-0 bottom-0 opacity-10">
+              <div className="absolute right-0 bottom-0 opacity-10 dark:opacity-5">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  className="h-32 w-32 text-blue-500"
+                  className="h-32 w-32 text-blue-500 dark:text-blue-400"
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke="currentColor"
@@ -97,17 +97,17 @@ export default function UserDashboard() {
               </div>
             </div>
 
-            <div className="relative overflow-hidden rounded-xl border border-purple-100 bg-purple-50 p-5">
+            <div className="relative overflow-hidden rounded-xl border border-purple-100 dark:border-purple-900 bg-purple-50 dark:bg-purple-900/30 p-5">
               <div className="relative z-10">
-                <h3 className="mb-2 text-lg font-semibold text-purple-800">
+                <h3 className="mb-2 text-lg font-semibold text-purple-800 dark:text-purple-300">
                   Track Orders
                 </h3>
-                <p className="mb-4 max-w-xs text-purple-700">
+                <p className="mb-4 max-w-xs text-purple-700 dark:text-purple-300">
                   Get real-time updates on your current orders and shipments.
                 </p>
                 <NavLink
                   to="/dashboard/track-order"
-                  className="inline-flex items-center rounded-lg bg-purple-600 px-4 py-2 font-medium text-white transition-colors hover:bg-purple-700"
+                  className="inline-flex items-center rounded-lg bg-purple-600 px-4 py-2 font-medium text-white transition-colors hover:bg-purple-700 dark:bg-purple-700 dark:hover:bg-purple-600"
                 >
                   Track Now
                   <svg
@@ -126,10 +126,10 @@ export default function UserDashboard() {
                   </svg>
                 </NavLink>
               </div>
-              <div className="absolute right-0 bottom-0 opacity-10">
+              <div className="absolute right-0 bottom-0 opacity-10 dark:opacity-5">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  className="h-32 w-32 text-purple-500"
+                  className="h-32 w-32 text-purple-500 dark:text-purple-400"
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke="currentColor"
