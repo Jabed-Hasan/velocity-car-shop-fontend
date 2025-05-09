@@ -50,16 +50,16 @@ const TeamCard: React.FC<TeamCardProps> = ({
   description,
 }) => {
   return (
-    <div className="flex flex-col items-center space-y-1 rounded-2xl bg-white px-5 py-10 text-center">
+    <div className="flex flex-col items-center space-y-1 rounded-2xl bg-white dark:bg-gray-800 px-5 py-10 text-center">
       <img
-        className="size-[150px] rounded-full border-[6px]"
+        className="size-[150px] rounded-full border-[6px] border-white dark:border-gray-700"
         src={image}
         alt="team-image"
       />
-      <h5 className="mt-5 text-lg font-semibold">{name}</h5>
+      <h5 className="mt-5 text-lg font-semibold dark:text-white">{name}</h5>
       <h6 className="text-velo-red">{designation}</h6>
-      <div className="my-3 h-[1px] w-4/5 bg-gray-200" />
-      <p className="text-[16.5px] font-light text-gray-600">{description}</p>
+      <div className="my-3 h-[1px] w-4/5 bg-gray-200 dark:bg-gray-700" />
+      <p className="text-[16.5px] font-light text-gray-600 dark:text-gray-300">{description}</p>
     </div>
   );
 };
@@ -146,9 +146,9 @@ const About = () => {
         </div>
       </div>
 
-      <div className="bg-velo-white">
+      <div className="bg-velo-white dark:bg-gray-900">
         <div className="container py-5 md:py-10">
-          <h3 className="text-2xl font-semibold md:text-center md:text-5xl md:leading-[60px]">
+          <h3 className="text-2xl font-semibold md:text-center md:text-5xl md:leading-[60px] dark:text-white">
             Our Team has over{" "}
             <span className="text-gray-400">
               70 years
@@ -156,7 +156,7 @@ const About = () => {
               of combined experience!
             </span>
           </h3>
-          <p className="mx-auto mt-2 text-[14.5px] font-light text-gray-500 md:mt-0 md:w-[550px] md:py-5 md:text-center md:text-[16px]">
+          <p className="mx-auto mt-2 text-[14.5px] font-light text-gray-500 dark:text-gray-400 md:mt-0 md:w-[550px] md:py-5 md:text-center md:text-[16px]">
             Our team brings experience, innovation, and creativity to the
             automotive world, ensuring your vehicle is in the best hands at
             Velocity Car Shop.
