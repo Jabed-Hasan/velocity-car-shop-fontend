@@ -8,6 +8,7 @@ import Newsletter from "@/components/ui/Home/Newsletter";
 import Testimonials from "@/components/ui/Home/Testimonials";
 import AboutUs from "@/components/ui/Home/AboutUs";
 import Services from "@/components/ui/Home/Services";
+import ProductSection from "@/components/ui/Home/ProductSection";
 
 const Home = () => {
   return (
@@ -15,6 +16,7 @@ const Home = () => {
       <Banner />
       <DynamicCategories />
       <FeaturedCars />
+      <ProductSection />
       <SpecialOffers />
       <Services />
       <AboutUs />

@@ -8,6 +8,7 @@ import { Button } from "../button";
 import { HiMenu } from "react-icons/hi";
 import { MdOutlineSpaceDashboard } from "react-icons/md";
 import { LucideIdCard } from "lucide-react";
+import ThemeToggle from "../ThemeToggle";
 
 const Navbar = () => {
   const location = useLocation();
@@ -86,14 +87,14 @@ const Navbar = () => {
 
   return (
     <header
-      className={`fixed top-0 z-50 w-full bg-white shadow-md transition-transform duration-500 ${
+      className={`fixed top-0 z-50 w-full bg-white dark:bg-gray-900 shadow-md transition-transform duration-500 ${
         showNavbar ? "translate-y-0" : "-translate-y-full"
       }`}
     >
       <div className="container flex items-center justify-between py-2.5 lg:px-0">
         <Link to="/" className="flex w-1/5 items-end">
           <img className="w-6 md:w-8" src={VelocityLogo} alt="velocity-logo" />{" "}
-          <span className="text-velo-black border-velo-maroon -ml-0.5 border-b-2 font-semibold md:-ml-1 md:text-xl">
+          <span className="text-velo-black dark:text-white border-velo-maroon -ml-0.5 border-b-2 font-semibold md:-ml-1 md:text-xl">
             elocity.
           </span>
         </Link>
@@ -107,7 +108,7 @@ const Navbar = () => {
               className={`border-b-2 px-0.5 text-base text-[16px] duration-300 ${
                 location.pathname === item.path
                   ? "text-velo-red border-velo-red"
-                  : "hover:border-velo-red text-velo-black hover:text-velo-red border-transparent"
+                  : "hover:border-velo-red text-velo-black dark:text-white hover:text-velo-red border-transparent"
               }`}
             >
               {item.name}
@@ -115,7 +116,9 @@ const Navbar = () => {
           ))}
         </nav>
 
-        <div className="hidden w-1/5 justify-end lg:flex">
+        <div className="hidden w-1/5 justify-end lg:flex items-center gap-3">
+          <ThemeToggle />
+          
           {user ? (
             <div className="relative" ref={dropdownRef}>
               <Button
@@ -125,11 +128,11 @@ const Navbar = () => {
                 <LucideIdCard className="size-5.5" /> Account
               </Button>
               {menuOpen === 0 && (
-                <ul className="animate-slide-down absolute right-0 mt-2 w-40 space-y-1.5 rounded-lg bg-white p-2 shadow-lg">
+                <ul className="animate-slide-down absolute right-0 mt-2 w-40 space-y-1.5 rounded-lg bg-white dark:bg-gray-800 p-2 shadow-lg">
                   <li>
                     <Link
                       to="/dashboard"
-                      className="bg-velo-red/5 hover:bg-velo-red/10 flex items-center gap-1 rounded-lg px-3 py-2 duration-300"
+                      className="bg-velo-red/5 hover:bg-velo-red/10 dark:hover:bg-velo-red/20 flex items-center gap-1 rounded-lg px-3 py-2 duration-300 dark:text-white"
                     >
                       <MdOutlineSpaceDashboard className="text-velo-maroon size-5" />
                       Dashboard
@@ -163,7 +166,9 @@ const Navbar = () => {
         </div>
 
         {/* Mobile Nav */}
-        <div className="relative lg:hidden" ref={mobileDropdownRef}>
+        <div className="relative flex items-center gap-2 lg:hidden" ref={mobileDropdownRef}>
+          <ThemeToggle />
+          
           <Button
             onClick={toggleMobileMenu}
             className="bg-velo-red size-8 md:size-10"
@@ -172,7 +177,7 @@ const Navbar = () => {
           </Button>
 
           {mobileMenuOpen && (
-            <div className="animate-slide-down absolute right-0 z-50 mt-2 w-40 space-y-1 rounded-[10px] bg-white p-1 shadow-lg">
+            <div className="animate-slide-down absolute right-0 z-50 mt-2 w-40 space-y-1 rounded-[10px] bg-white dark:bg-gray-800 p-1 shadow-lg">
               {navLinks.map((item) => (
                 <Link
                   key={item.path}
@@ -181,19 +186,19 @@ const Navbar = () => {
                   className={`block rounded-md px-3 py-1.5 text-sm ${
                     location.pathname === item.path
                       ? "bg-velo-red text-white"
-                      : "text-gray-700 hover:bg-purple-100"
+                      : "text-gray-700 dark:text-gray-200 hover:bg-purple-100 dark:hover:bg-gray-700"
                   }`}
                 >
                   {item.name}
                 </Link>
               ))}
-              <div className="mx-auto h-[1px] w-11/12 rounded-full bg-gray-300" />
+              <div className="mx-auto h-[1px] w-11/12 rounded-full bg-gray-300 dark:bg-gray-600" />
               {user ? (
                 <>
                   <Link
                     to="/dashboard"
                     onClick={toggleMobileMenu}
-                    className="block px-3 py-2 text-sm hover:bg-purple-100"
+                    className="block px-3 py-2 text-sm text-gray-700 dark:text-gray-200 hover:bg-purple-100 dark:hover:bg-gray-700"
                   >
                     Dashboard
                   </Link>
@@ -202,7 +207,7 @@ const Navbar = () => {
                       handleLogout();
                       toggleMobileMenu();
                     }}
-                    className="w-full rounded px-3 py-2 text-left text-sm hover:bg-purple-100"
+                    className="w-full rounded px-3 py-2 text-left text-sm text-gray-700 dark:text-gray-200 hover:bg-purple-100 dark:hover:bg-gray-700"
                   >
                     Logout
                   </button>

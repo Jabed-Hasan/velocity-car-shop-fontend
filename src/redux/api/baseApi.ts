@@ -4,7 +4,7 @@ export const baseApi = createApi({
   reducerPath: "baseApi",
   tagTypes: ["User", "Cars"],
   baseQuery: fetchBaseQuery({
-    baseUrl: "https://velo-backend-five.vercel.app/api",
+    baseUrl: "http://localhost:5000/api",
     credentials: "include",
     prepareHeaders: (Headers, { getState }) => {
       const token = (getState() as RootState).auth.token;

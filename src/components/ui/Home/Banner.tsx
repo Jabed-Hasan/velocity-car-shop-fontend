@@ -44,8 +44,8 @@ const BannerVeloBlackPartInner: React.FC<BannerVeloBlackPartInnerProps> = ({
 }) => {
   return (
     <div>
-      <h4 className="text-3xl">{value}</h4>
-      <h5 className="text-velo-gray w-min font-extralight">{title}</h5>
+      <h4 className="text-3xl text-white">{value}</h4>
+      <h5 className="text-velo-gray dark:text-gray-300 w-min font-extralight">{title}</h5>
     </div>
   );
 };
@@ -88,32 +88,32 @@ const Banner = () => {
   }, [nextSlide]);
 
   return (
-    <section className="bg-velo-white">
+    <section className="bg-velo-white dark:bg-gray-900">
       <div className="container flex h-full flex-col-reverse items-center gap-5 py-5 md:flex-row md:gap-16">
         {/* Text Part */}
         <div className="space-y-4 md:w-1/2 md:space-y-8 lg:w-2/5 lg:space-y-12">
-          <h1 className="text-3xl font-medium md:text-5xl md:leading-[60px] xl:text-6xl xl:leading-[65px]">
+          <h1 className="text-3xl font-medium text-velo-black dark:text-white md:text-5xl md:leading-[60px] xl:text-6xl xl:leading-[65px]">
             Your Journey <br className="hidden md:block" />
             Begins with <br className="hidden md:block" />
             Our Cars
           </h1>
 
-          <p className="md:text-lg">
+          <p className="text-gray-700 dark:text-gray-300 md:text-lg">
             Welcome to Velocity, your destination for the perfect ride! Discover
             our extensive selection of quality vehicles and enjoy exceptional
             service. Let us help you accelerate your journey today
           </p>
 
           <div className="group flex gap-3">
-            <Button className="bg-velo-red group-hover:!bg-velo-maroon h-11">
+            <Button className="bg-velo-red group-hover:!bg-velo-maroon h-11 text-white">
               Search For Cars
             </Button>
-            <Button className="bg-velo-red group-hover:!bg-velo-maroon size-11">
+            <Button className="bg-velo-red group-hover:!bg-velo-maroon size-11 text-white">
               <RxArrowTopRight />
             </Button>
           </div>
 
-          <p className="font-bold text-gray-400">
+          <p className="font-bold text-gray-400 dark:text-gray-300">
             Accelerate Your Journey with Quality and Care!!
           </p>
         </div>
@@ -170,9 +170,10 @@ const Banner = () => {
             alt=""
           />
 
-          <div className="bg-velo-black text-velo-white col-span-2 row-span-1 hidden h-full w-full grid-cols-2 place-items-center rounded-[50px] lg:grid lg:gap-5 lg:p-8">
+          <div className="bg-velo-black dark:bg-gray-800 text-velo-white col-span-2 row-span-1 hidden h-full w-full grid-cols-2 place-items-center rounded-[50px] lg:grid lg:gap-5 lg:p-8">
             {bannerVeloBlackPartInnerData.map((eachData) => (
               <BannerVeloBlackPartInner
+                key={eachData.title}
                 value={eachData.value}
                 title={eachData.title}
               />

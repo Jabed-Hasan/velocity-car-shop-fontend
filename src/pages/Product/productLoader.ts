@@ -26,7 +26,7 @@ export const productLoader = async ({ params }: LoaderFunctionArgs) => {
 
   try {
     const response = await fetch(
-      `https://velo-backend-five.vercel.app/api/cars/${id}`,
+      `http://localhost:5000/api/cars/${id}`,
       {
         headers: {
           Authorization: `${token}`,

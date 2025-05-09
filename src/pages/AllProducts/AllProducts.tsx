@@ -37,7 +37,7 @@ const AllProducts = () => {
 
   // Pagination state
   const [currentPage, setCurrentPage] = useState(1);
-  const carsPerPage = 9;
+  const carsPerPage = 16;
 
   // Extract unique brands and categories for filter dropdowns
   const brands = allCarsData?.data
@@ -112,65 +112,65 @@ const AllProducts = () => {
       <section className="container py-10">
         {/* Skeleton Title */}
         <div className="mb-8 animate-pulse">
-          <div className="h-10 w-48 rounded bg-gray-200"></div>
+          <div className="h-10 w-48 rounded bg-gray-200 dark:bg-gray-700"></div>
         </div>
 
         {/* Skeleton Search and Filter */}
-        <Card className="mb-4 border border-gray-200 shadow-sm">
+        <Card className="mb-4 border border-gray-200 dark:border-gray-700 shadow-sm dark:bg-gray-800">
           <CardContent className="p-2">
             <div className="flex flex-wrap items-center gap-2">
               {/* Search Input Skeleton */}
               <div className="w-full flex-shrink-0 md:w-[30%]">
-                <div className="h-7 w-full rounded bg-gray-200"></div>
+                <div className="h-7 w-full rounded bg-gray-200 dark:bg-gray-700"></div>
               </div>
 
               {/* Brand Filter Skeleton */}
               <div className="w-full flex-shrink-0 md:w-[15%]">
-                <div className="h-7 w-full rounded bg-gray-200"></div>
+                <div className="h-7 w-full rounded bg-gray-200 dark:bg-gray-700"></div>
               </div>
 
               {/* Category Filter Skeleton */}
               <div className="w-full flex-shrink-0 md:w-[15%]">
-                <div className="h-7 w-full rounded bg-gray-200"></div>
+                <div className="h-7 w-full rounded bg-gray-200 dark:bg-gray-700"></div>
               </div>
 
               {/* Price Inputs Skeleton */}
               <div className="flex w-full flex-shrink-0 items-center gap-1 md:w-[25%]">
-                <div className="h-7 w-full rounded bg-gray-200"></div>
+                <div className="h-7 w-full rounded bg-gray-200 dark:bg-gray-700"></div>
               </div>
 
               {/* Reset Button Skeleton */}
               <div className="w-full flex-shrink-0 md:w-[12%]">
-                <div className="h-7 w-full rounded bg-gray-200"></div>
+                <div className="h-7 w-full rounded bg-gray-200 dark:bg-gray-700"></div>
               </div>
             </div>
           </CardContent>
         </Card>
 
         {/* Skeleton Results Summary */}
-        <div className="mb-4 animate-pulse rounded bg-gray-50 px-4 py-1.5">
-          <div className="h-4 w-48 rounded bg-gray-200"></div>
+        <div className="mb-4 animate-pulse rounded bg-gray-50 dark:bg-gray-800 px-4 py-1.5">
+          <div className="h-4 w-48 rounded bg-gray-200 dark:bg-gray-700"></div>
         </div>
 
         {/* Skeleton Car Grid */}
-        <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
-          {Array(9)
+        <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
+          {Array(16)
             .fill(0)
             .map((_, index) => (
               <div
                 key={index}
-                className="animate-pulse overflow-hidden rounded-lg border border-gray-200 shadow-sm"
+                className="animate-pulse overflow-hidden rounded-lg border border-gray-200 dark:border-gray-700 shadow-sm dark:bg-gray-800"
               >
                 {/* Skeleton Image */}
-                <div className="h-48 w-full bg-gray-200"></div>
+                <div className="h-48 w-full bg-gray-200 dark:bg-gray-700"></div>
 
                 {/* Skeleton Content */}
                 <div className="p-4">
                   <div className="space-y-2">
-                    <div className="h-6 w-3/4 rounded bg-gray-200"></div>
-                    <div className="h-4 w-1/2 rounded bg-gray-200"></div>
-                    <div className="h-4 w-1/3 rounded bg-gray-200"></div>
-                    <div className="mt-4 h-10 w-full rounded bg-gray-200"></div>
+                    <div className="h-6 w-3/4 rounded bg-gray-200 dark:bg-gray-700"></div>
+                    <div className="h-4 w-1/2 rounded bg-gray-200 dark:bg-gray-700"></div>
+                    <div className="h-4 w-1/3 rounded bg-gray-200 dark:bg-gray-700"></div>
+                    <div className="mt-4 h-10 w-full rounded bg-gray-200 dark:bg-gray-700"></div>
                   </div>
                 </div>
               </div>
@@ -180,18 +180,18 @@ const AllProducts = () => {
         {/* Skeleton Pagination */}
         <div className="mt-8 flex justify-center">
           <div className="flex items-center space-x-2">
-            <div className="h-10 w-20 rounded bg-gray-200"></div>
+            <div className="h-10 w-20 rounded bg-gray-200 dark:bg-gray-700"></div>
             <div className="flex space-x-1">
               {Array(3)
                 .fill(0)
                 .map((_, index) => (
                   <div
                     key={index}
-                    className="h-10 w-10 rounded bg-gray-200"
+                    className="h-10 w-10 rounded bg-gray-200 dark:bg-gray-700"
                   ></div>
                 ))}
             </div>
-            <div className="h-10 w-20 rounded bg-gray-200"></div>
+            <div className="h-10 w-20 rounded bg-gray-200 dark:bg-gray-700"></div>
           </div>
         </div>
       </section>
@@ -227,7 +227,7 @@ const AllProducts = () => {
       <SectionTitle title="All Cars" />
 
       {/* Search and Filter Section */}
-      <Card className="bg-velo-white mb-4 border-0 py-0 shadow-none">
+      <Card className="bg-velo-white dark:bg-gray-800 mb-4 border-0 py-0 shadow-none">
         <CardContent className="p-2">
           <div className="flex flex-wrap items-center gap-2">
             {/* Search Input */}
@@ -238,17 +238,17 @@ const AllProducts = () => {
                 placeholder="Search by brand, car name, or category..."
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
-                className="h-10 w-full bg-white pl-7 text-sm"
+                className="h-10 w-full bg-white dark:bg-gray-700 dark:text-white dark:placeholder:text-gray-400 pl-7 text-sm"
               />
             </div>
 
             {/* Brand Filter */}
             <div className="w-full flex-shrink-0 md:w-[15%]">
               <Select value={brandFilter} onValueChange={setBrandFilter}>
-                <SelectTrigger id="brandFilter" className="h-10 w-full text-sm">
+                <SelectTrigger id="brandFilter" className="h-10 w-full text-sm dark:bg-gray-700 dark:text-white">
                   <SelectValue placeholder="All Brands" />
                 </SelectTrigger>
-                <SelectContent>
+                <SelectContent className="dark:bg-gray-800 dark:text-white">
                   <SelectItem value="all">All Brands</SelectItem>
                   <SelectItem value="Toyota">Toyota</SelectItem>
                   <SelectItem value="Ford">Ford</SelectItem>
@@ -366,8 +366,8 @@ const AllProducts = () => {
       </Card>
 
       {/* Results Summary */}
-      <div className="bg-velo-white mb-4 flex items-center justify-between rounded px-4 py-1.5 text-xs md:py-2">
-        <p className="text-gray-600">
+      <div className="bg-velo-white dark:bg-gray-800 mb-4 flex items-center justify-between rounded px-4 py-1.5 text-xs md:py-2">
+        <p className="text-gray-600 dark:text-gray-300">
           Showing{" "}
           <span className="font-semibold">
             {indexOfFirstCar + 1}-
@@ -376,7 +376,7 @@ const AllProducts = () => {
           of <span className="font-semibold">{filteredCars.length}</span> cars
         </p>
         {filteredCars.length > 0 && (
-          <p className="text-gray-600">
+          <p className="text-gray-600 dark:text-gray-300">
             <span className="font-semibold">
               {brandFilter !== "all" ? brandFilter : "All brands"}
             </span>{" "}
@@ -389,7 +389,7 @@ const AllProducts = () => {
       </div>
 
       {/* Car Grid */}
-      <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+      <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
         {currentCars.length > 0 ? (
           currentCars.map((car) => (
             <CarCard
@@ -403,7 +403,7 @@ const AllProducts = () => {
             />
           ))
         ) : (
-          <div className="col-span-3 py-8 text-center text-gray-500">
+          <div className="col-span-4 py-8 text-center text-gray-500">
             No cars match your search criteria. Try adjusting your filters.
           </div>
         )}
@@ -418,8 +418,8 @@ const AllProducts = () => {
               disabled={currentPage === 1}
               className={`rounded-md px-3 py-2 ${
                 currentPage === 1
-                  ? "cursor-not-allowed text-gray-400"
-                  : "text-red-600 hover:bg-red-50"
+                  ? "cursor-not-allowed text-gray-400 dark:text-gray-500"
+                  : "text-red-600 hover:bg-red-50 dark:hover:bg-red-900/10"
               }`}
             >
               Previous
@@ -453,7 +453,7 @@ const AllProducts = () => {
                         className={`rounded-md px-3 py-2 ${
                           currentPage === page
                             ? "bg-red-600 text-white"
-                            : "text-red-600 hover:bg-blue-50"
+                            : "text-red-600 dark:text-red-400 hover:bg-blue-50 dark:hover:bg-blue-900/10"
                         }`}
                       >
                         {page}
@@ -472,8 +472,8 @@ const AllProducts = () => {
               disabled={currentPage === totalPages}
               className={`rounded-md px-3 py-2 ${
                 currentPage === totalPages
-                  ? "cursor-not-allowed text-gray-400"
-                  : "text-red-600 hover:bg-red-50"
+                  ? "cursor-not-allowed text-gray-400 dark:text-gray-500"
+                  : "text-red-600 hover:bg-red-50 dark:hover:bg-red-900/10"
               }`}
             >
               Next

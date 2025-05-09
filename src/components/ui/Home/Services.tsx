@@ -41,11 +41,11 @@ const servicesData = [
 
 const Services = () => {
   return (
-    <section className="py-16 bg-gray-50">
+    <section className="py-16 bg-gray-50 dark:bg-gray-900">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold text-gray-900 mb-4">Our Services</h2>
-          <p className="text-gray-600 max-w-2xl mx-auto">
+          <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-4">Our Services</h2>
+          <p className="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
             We offer a wide range of services to ensure the best experience for our customers.
           </p>
         </div>
@@ -54,11 +54,11 @@ const Services = () => {
           {servicesData.map((service) => (
             <div 
               key={service.id} 
-              className="bg-white p-8 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300"
+              className="bg-white dark:bg-gray-800 p-8 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300"
             >
               <div className="mb-5">{service.icon}</div>
-              <h3 className="text-xl font-semibold mb-3">{service.title}</h3>
-              <p className="text-gray-600">{service.description}</p>
+              <h3 className="text-xl font-semibold mb-3 dark:text-white">{service.title}</h3>
+              <p className="text-gray-600 dark:text-gray-300">{service.description}</p>
             </div>
           ))}
         </div>

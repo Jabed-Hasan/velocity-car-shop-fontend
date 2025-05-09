@@ -3,11 +3,11 @@ import { ArrowRight, Clock, Tag } from "lucide-react";
 
 const SpecialOffers = () => {
   return (
-    <section className="py-16 bg-white">
+    <section className="py-16 bg-white dark:bg-gray-900">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold text-gray-900 mb-4">Special Offers</h2>
-          <p className="text-gray-600 max-w-2xl mx-auto">
+          <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-4">Special Offers</h2>
+          <p className="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
             Take advantage of our limited-time offers and exclusive deals on select vehicles.
           </p>
         </div>
@@ -36,28 +36,28 @@ const SpecialOffers = () => {
           
           {/* Offer Grid */}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            <div className="bg-gray-100 rounded-lg p-6">
-              <h3 className="text-xl font-semibold mb-3">Zero Down Payment</h3>
-              <p className="text-gray-600 mb-4">Drive home your dream car with zero down payment on select models.</p>
-              <Button variant="outline" className="text-sm text-red-600 border-red-600 hover:bg-red-50">Learn More</Button>
+            <div className="bg-gray-100 dark:bg-gray-800 rounded-lg p-6">
+              <h3 className="text-xl font-semibold mb-3 dark:text-white">Zero Down Payment</h3>
+              <p className="text-gray-600 dark:text-gray-300 mb-4">Drive home your dream car with zero down payment on select models.</p>
+              <Button variant="outline" className="text-sm text-red-600 dark:text-red-400 border-red-600 dark:border-red-400 hover:bg-red-50 dark:hover:bg-red-900/20">Learn More</Button>
             </div>
             
-            <div className="bg-gray-100 rounded-lg p-6">
-              <h3 className="text-xl font-semibold mb-3">Low Interest Rate</h3>
-              <p className="text-gray-600 mb-4">Get financing at just 2.99% APR for qualified buyers.</p>
-              <Button variant="outline" className="text-sm text-red-600 border-red-600 hover:bg-red-50">Learn More</Button>
+            <div className="bg-gray-100 dark:bg-gray-800 rounded-lg p-6">
+              <h3 className="text-xl font-semibold mb-3 dark:text-white">Low Interest Rate</h3>
+              <p className="text-gray-600 dark:text-gray-300 mb-4">Get financing at just 2.99% APR for qualified buyers.</p>
+              <Button variant="outline" className="text-sm text-red-600 dark:text-red-400 border-red-600 dark:border-red-400 hover:bg-red-50 dark:hover:bg-red-900/20">Learn More</Button>
             </div>
             
-            <div className="bg-gray-100 rounded-lg p-6">
-              <h3 className="text-xl font-semibold mb-3">Extended Warranty</h3>
-              <p className="text-gray-600 mb-4">Get an additional 2-year warranty on all new purchases.</p>
-              <Button variant="outline" className="text-sm text-red-600 border-red-600 hover:bg-red-50">Learn More</Button>
+            <div className="bg-gray-100 dark:bg-gray-800 rounded-lg p-6">
+              <h3 className="text-xl font-semibold mb-3 dark:text-white">Extended Warranty</h3>
+              <p className="text-gray-600 dark:text-gray-300 mb-4">Get an additional 2-year warranty on all new purchases.</p>
+              <Button variant="outline" className="text-sm text-red-600 dark:text-red-400 border-red-600 dark:border-red-400 hover:bg-red-50 dark:hover:bg-red-900/20">Learn More</Button>
             </div>
             
-            <div className="bg-gray-100 rounded-lg p-6">
-              <h3 className="text-xl font-semibold mb-3">Trade-in Bonus</h3>
-              <p className="text-gray-600 mb-4">Extra $1,000 on your trade-in value towards a new vehicle.</p>
-              <Button variant="outline" className="text-sm text-red-600 border-red-600 hover:bg-red-50">Learn More</Button>
+            <div className="bg-gray-100 dark:bg-gray-800 rounded-lg p-6">
+              <h3 className="text-xl font-semibold mb-3 dark:text-white">Trade-in Bonus</h3>
+              <p className="text-gray-600 dark:text-gray-300 mb-4">Extra $1,000 on your trade-in value towards a new vehicle.</p>
+              <Button variant="outline" className="text-sm text-red-600 dark:text-red-400 border-red-600 dark:border-red-400 hover:bg-red-50 dark:hover:bg-red-900/20">Learn More</Button>
             </div>
           </div>
         </div>

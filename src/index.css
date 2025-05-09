@@ -150,3 +150,23 @@ body {
 .gmnoprint {
   display: none !important;
 }
+
+/* Dark mode specific styles */
+.dark button {
+  @apply text-white;
+}
+
+/* Improve heading visibility in dark mode */
+.dark h1, .dark h2, .dark h3, .dark h4, .dark h5, .dark h6 {
+  @apply text-white;
+}
+
+/* Improve text visibility in dark mode */
+.dark p {
+  @apply text-gray-300;
+}
+
+/* Ensure links are visible in dark mode */
+.dark a:not(.bg-velo-red):not(.bg-velo-black):not(.bg-red-600) {
+  @apply text-blue-400;
+}

@@ -19,7 +19,7 @@ const CarCard: React.FC<CarCardProps> = ({
   _id,
 }) => {
   return (
-    <div className="group hover:border-velo-red/30 relative flex h-full flex-col overflow-hidden rounded-xl border border-gray-200 bg-white shadow-sm transition-all duration-300 hover:shadow-md">
+    <div className="group hover:border-velo-red/30 dark:hover:border-velo-red/50 relative flex h-full flex-col overflow-hidden rounded-xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 shadow-sm transition-all duration-300 hover:shadow-md">
       {/* Category Badge */}
       <div className="absolute top-3 right-3 z-10">
         <div className="bg-velo-red text-velo-white rounded-full px-4 py-1 text-xs font-semibold uppercase shadow-sm">
@@ -37,17 +37,17 @@ const CarCard: React.FC<CarCardProps> = ({
       </div>
 
       {/* Card Content */}
-      <div className="flex flex-1 flex-col p-4">
+      <div className="flex flex-1 flex-col p-4 dark:bg-gray-800">
         {/* Brand */}
-        <div className="mb-1 text-sm font-medium text-gray-500">{brand}</div>
+        <div className="mb-1 text-sm font-medium text-gray-500 dark:text-gray-400">{brand}</div>
 
         {/* Model Name */}
-        <h3 className="text-velo-black group-hover:text-velo-red mb-2 line-clamp-1 text-lg font-bold transition-colors">
+        <h3 className="text-velo-black dark:text-white group-hover:text-velo-red mb-2 line-clamp-1 text-lg font-bold transition-colors">
           {carName}
         </h3>
 
         {/* Divider */}
-        <div className="my-2 border-t border-gray-100"></div>
+        <div className="my-2 border-t border-gray-100 dark:border-gray-700"></div>
 
         {/* Price and Button in single row */}
         <div className="mt-auto">
@@ -58,9 +58,9 @@ const CarCard: React.FC<CarCardProps> = ({
 
             <Link
               to={`/carDetails/${_id}`}
-              className="bg-velo-red hover:bg-velo-red/90 flex transform items-center justify-center gap-1 rounded-lg px-3 py-2 text-sm md:text-base lg:text-lg text-center font-semibold text-white shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:shadow"
+              className="bg-velo-red hover:bg-velo-maroon dark:bg-velo-red/90 dark:hover:bg-velo-red rounded px-4 py-2 text-sm font-medium text-white shadow-sm transition-all duration-300 hover:shadow-md flex items-center gap-2"
             >
-              View details
+              <span>View details</span>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 className="h-4 w-4"

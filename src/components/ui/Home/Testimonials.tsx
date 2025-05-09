@@ -37,18 +37,18 @@ const testimonials = [
 
 const Testimonials = () => {
   return (
-    <section className="py-16 bg-gray-50">
+    <section className="py-16 bg-gray-50 dark:bg-gray-900">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold text-gray-900 mb-4">What Our Customers Say</h2>
-          <p className="text-gray-600 max-w-2xl mx-auto">
+          <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-4">What Our Customers Say</h2>
+          <p className="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
             Don't just take our word for it - see what our valued customers have to say about their experience with Velocity Car Shop.
           </p>
         </div>
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {testimonials.map((testimonial) => (
-            <div key={testimonial.id} className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
+            <div key={testimonial.id} className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
               <div className="flex items-center mb-4">
                 <img 
                   src={testimonial.image} 
@@ -56,8 +56,8 @@ const Testimonials = () => {
                   className="w-12 h-12 rounded-full mr-3"
                 />
                 <div>
-                  <h4 className="font-semibold text-gray-900">{testimonial.name}</h4>
-                  <p className="text-sm text-gray-500">{testimonial.title}</p>
+                  <h4 className="font-semibold text-gray-900 dark:text-white">{testimonial.name}</h4>
+                  <p className="text-sm text-gray-500 dark:text-gray-400">{testimonial.title}</p>
                 </div>
               </div>
               
@@ -65,18 +65,18 @@ const Testimonials = () => {
                 {[...Array(5)].map((_, i) => (
                   <Star 
                     key={i} 
-                    className={`w-4 h-4 ${i < testimonial.rating ? 'text-red-400 fill-red-400' : 'text-gray-300'}`}
+                    className={`w-4 h-4 ${i < testimonial.rating ? 'text-red-400 fill-red-400' : 'text-gray-300 dark:text-gray-600'}`}
                   />
                 ))}
               </div>
               
-              <p className="text-gray-700">{testimonial.content}</p>
+              <p className="text-gray-700 dark:text-gray-300">{testimonial.content}</p>
             </div>
           ))}
         </div>
         
         <div className="mt-12 text-center">
-          <a href="#" className="text-red-600 font-medium hover:underline">
+          <a href="#" className="text-red-600 dark:text-red-400 font-medium hover:underline">
             View all testimonials →
           </a>
         </div>

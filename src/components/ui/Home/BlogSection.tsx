@@ -33,18 +33,18 @@ const blogPosts = [
 
 const BlogSection = () => {
   return (
-    <section className="py-16 bg-white">
+    <section className="py-16 bg-white dark:bg-gray-900">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold text-gray-900 mb-4">Latest From Our Blog</h2>
-          <p className="text-gray-600 max-w-2xl mx-auto">
+          <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-4">Latest From Our Blog</h2>
+          <p className="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
             Stay updated with the latest automotive news, buying guides, and maintenance tips from our experts.
           </p>
         </div>
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {blogPosts.map((post) => (
-            <div key={post.id} className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300">
+            <div key={post.id} className="bg-white dark:bg-gray-800 rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300">
               <div className="h-48 overflow-hidden">
                 <img 
                   src={post.image} 
@@ -55,20 +55,20 @@ const BlogSection = () => {
               
               <div className="p-6">
                 <div className="flex items-center mb-3">
-                  <span className="text-xs font-medium text-white bg-red-600 px-2 py-1 rounded">
+                  <span className="text-xs font-medium text-white bg-red-600 dark:bg-red-700 px-2 py-1 rounded">
                     {post.category}
                   </span>
                 </div>
                 
-                <h3 className="text-xl font-semibold mb-3 hover:text-red-600 transition-colors">
+                <h3 className="text-xl font-semibold mb-3 hover:text-red-600 dark:text-white dark:hover:text-red-400 transition-colors">
                   {post.title}
                 </h3>
                 
-                <p className="text-gray-600 mb-4 line-clamp-2">
+                <p className="text-gray-600 dark:text-gray-300 mb-4 line-clamp-2">
                   {post.excerpt}
                 </p>
                 
-                <div className="flex items-center justify-between text-sm text-gray-500 mb-4">
+                <div className="flex items-center justify-between text-sm text-gray-500 dark:text-gray-400 mb-4">
                   <div className="flex items-center">
                     <Calendar className="w-4 h-4 mr-1" />
                     <span>{post.date}</span>
@@ -79,7 +79,7 @@ const BlogSection = () => {
                   </div>
                 </div>
                 
-                <Button variant="ghost" className="text-red-600 hover:text-red-700 p-0 hover:bg-transparent">
+                <Button variant="ghost" className="text-red-600 dark:text-red-400 hover:text-red-700 dark:hover:text-red-300 p-0 hover:bg-transparent">
                   Read More <ArrowRight className="w-4 h-4 ml-1" />
                 </Button>
               </div>

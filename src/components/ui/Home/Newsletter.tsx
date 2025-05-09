@@ -4,7 +4,7 @@ import { Mail } from "lucide-react";
 
 const Newsletter = () => {
   return (
-    <section className="py-16 bg-red-600 text-white">
+    <section className="py-16 bg-red-600 text-white dark:bg-red-800">
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto text-center">
           <div className="mb-2">
@@ -21,10 +21,10 @@ const Newsletter = () => {
             <Input 
               type="email" 
               placeholder="Enter your email address" 
-              className="bg-white/10 border-white/20 text-white placeholder:text-red-200 focus-visible:ring-white"
+              className="bg-white/10 border-white/20 text-white placeholder:text-red-200 focus-visible:ring-white dark:bg-white/5 dark:border-white/10"
               required
             />
-            <Button className="bg-white text-red-600 hover:bg-red-50 px-6">
+            <Button className="bg-white text-red-600 hover:bg-red-50 dark:bg-white dark:hover:bg-red-50 px-6">
               Subscribe
             </Button>
           </form>
