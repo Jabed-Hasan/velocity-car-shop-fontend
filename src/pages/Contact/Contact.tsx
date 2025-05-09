@@ -15,9 +15,9 @@ interface ContactSliceProps {
 const ContactSlice: React.FC<ContactSliceProps> = ({ title, data1, data2 }) => {
   return (
     <div className="space-y-0.5">
-      <h6 className="mb-0.5 font-medium sm:text-lg">{title}</h6>
-      <p className="text-sm text-gray-600 sm:text-base">{data1}</p>
-      <p className="text-sm text-gray-600 sm:text-base">{data2}</p>
+      <h6 className="mb-0.5 font-medium sm:text-lg dark:text-white">{title}</h6>
+      <p className="text-sm text-gray-600 dark:text-gray-300 sm:text-base">{data1}</p>
+      <p className="text-sm text-gray-600 dark:text-gray-300 sm:text-base">{data2}</p>
     </div>
   );
 };
@@ -46,7 +46,7 @@ const contactSliceData: ContactSliceProps[] = [
 const Contact = () => {
   return (
     <section className="pb-5">
-      <div className="bg-velo-white py-5">
+      <div className="bg-velo-white dark:bg-gray-900 py-5">
         <div className="container">
           <div
             style={{
@@ -73,11 +73,11 @@ const Contact = () => {
       <div className="container grid grid-cols-1 gap-8 py-10 md:grid-cols-2 md:py-20 lg:gap-12">
         <div className="space-y-7">
           <h6 className="text-velo-red font-semibold">/get in touch/</h6>
-          <h5 className="text-3xl lg:text-5xl">
+          <h5 className="text-3xl lg:text-5xl dark:text-white">
             We are always ready to help you and answer your questions
           </h5>
 
-          <p className="text-[16.5px]">
+          <p className="text-[16.5px] dark:text-gray-300">
             Contact Velocity Car Shop today for professional auto care, quick
             turnaround, honest service, and a dedicated team ready to keep you
             moving forward.
@@ -95,10 +95,10 @@ const Contact = () => {
           </div>
         </div>
 
-        <div className="bg-velo-gray flex items-center justify-center rounded-3xl p-5 sm:p-10 md:p-7 lg:p-15">
+        <div className="bg-velo-gray dark:bg-gray-800 flex items-center justify-center rounded-3xl p-5 sm:p-10 md:p-7 lg:p-15">
           <div>
-            <h6 className="text-2xl font-medium">Get In Touch</h6>
-            <p className="pt-3 pb-6 text-gray-500 lg:text-[17px]">
+            <h6 className="text-2xl font-medium dark:text-white">Get In Touch</h6>
+            <p className="pt-3 pb-6 text-gray-500 dark:text-gray-400 lg:text-[17px]">
               Let us know what you need, and we will gladly assist you with your
               tailored requirements.
             </p>
@@ -106,21 +106,21 @@ const Contact = () => {
               <Input
                 type="text"
                 placeholder="Full Name"
-                className="border-velo-black/30 h-10 rounded-none border-0 border-b text-lg shadow-none focus:outline-none focus-visible:ring-0 focus-visible:outline-none"
+                className="border-velo-black/30 dark:border-gray-600 h-10 rounded-none border-0 border-b text-lg shadow-none dark:bg-transparent dark:text-white dark:placeholder:text-gray-400 focus:outline-none focus-visible:ring-0 focus-visible:outline-none"
               />
               <Input
                 type="email"
                 placeholder="Your Email"
-                className="border-velo-black/30 h-10 rounded-none border-0 border-b text-lg shadow-none focus:outline-none focus-visible:ring-0 focus-visible:outline-none"
+                className="border-velo-black/30 dark:border-gray-600 h-10 rounded-none border-0 border-b text-lg shadow-none dark:bg-transparent dark:text-white dark:placeholder:text-gray-400 focus:outline-none focus-visible:ring-0 focus-visible:outline-none"
               />
               <Input
                 type="text"
                 placeholder="Subject"
-                className="border-velo-black/30 h-10 rounded-none border-0 border-b text-lg shadow-none focus:outline-none focus-visible:ring-0 focus-visible:outline-none"
+                className="border-velo-black/30 dark:border-gray-600 h-10 rounded-none border-0 border-b text-lg shadow-none dark:bg-transparent dark:text-white dark:placeholder:text-gray-400 focus:outline-none focus-visible:ring-0 focus-visible:outline-none"
               />
               <Textarea
                 placeholder="Your Message"
-                className="border-velo-black/30 h-20 rounded-none border-0 border-b text-lg shadow-none focus:outline-none focus-visible:ring-0 focus-visible:outline-none"
+                className="border-velo-black/30 dark:border-gray-600 h-20 rounded-none border-0 border-b text-lg shadow-none dark:bg-transparent dark:text-white dark:placeholder:text-gray-400 focus:outline-none focus-visible:ring-0 focus-visible:outline-none"
               />
               <Button className="bg-velo-red hover:bg-velo-maroon mt-2 h-11">
                 <FaChevronRight />
